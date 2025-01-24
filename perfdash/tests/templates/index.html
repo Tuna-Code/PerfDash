@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>PerfDash Home</h1>
+  <p>
+    Welcome to PerfDash, a website developed for the
+    <em>OSU NOC</em>!
+  </p>
+  <h2>Dynamic content</h2>
+  <p>PerfDash has the following record counts:</p>
+  <ul>
+    <li><strong>Hosts:</strong> {{ num_hosts }}</li>
+    <li><strong>Tests:</strong> {{ num_tests }}</li>
+    <li><strong>Throughput Tests:</strong> {{ num_throughput_tests }}</li>
+    <li><strong>Locations:</strong> {{ num_locations }}</li>
+  </ul>
+{% endblock %}
