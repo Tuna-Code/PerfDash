@@ -4,11 +4,10 @@ from django.db.models import UniqueConstraint # Constrains fields to unique valu
 from django.db.models.functions import Lower # Returns lower cased value of field
 import uuid
 
-
 class Location(models.Model):
     """Model representing a perfsonar location."""
     name = models.CharField(max_length=200, unique=True)
-    description = models.TextField(max_length=1000, help_text='Enter a brief description of the location')
+    description = models.CharField(max_length=200, help_text='Enter a brief description of the location')
     
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this location."""
@@ -83,8 +82,6 @@ class Test(models.Model):
         default='t',
         help_text='Test Type',
     )
-
-    test_description = models.CharField(max_length=200)
 
     duration = models.IntegerField()
 
