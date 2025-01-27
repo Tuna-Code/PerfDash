@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{% block title %}{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-</head>
-<body>
+{% extends "base_generic.html" %}
 
-<div class="container">
-  <ul class="nav bg-info">
-    <li class="nav-item">
-      <a class="nav-link link-light" href="{% url 'index' %}">HOME</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link link-light" href="">All Hosts</a>
-    </li>
-  </ul>
-
-  {% block content %}
+{% block content %}
   <h1>PerfDash Home</h1>
   <p>
     Welcome to PerfDash, a website developed for the
@@ -45,7 +27,4 @@
     <li><strong>Throughput Tests:</strong> {{ num_throughput_tests }}</li>
     <li><strong>Locations:</strong> {{ num_locations }}</li>
   </ul>
-  {% endblock %}
-</div>
-</body>
-</html>
+{% endblock %}
