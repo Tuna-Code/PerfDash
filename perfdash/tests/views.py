@@ -20,6 +20,7 @@ def index(request):
         'num_tests': num_tests,
         'num_throughput_tests': num_throughput_tests,
         'num_locations': num_locations,
+        'all_tests' : Test.objects.all()
     }
 
     # Render the HTML template index.html with the data in the context variable
