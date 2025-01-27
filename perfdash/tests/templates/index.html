@@ -6,7 +6,20 @@
     Welcome to PerfDash, a website developed for the
     <em>OSU NOC</em>!
   </p>
-  <h2>Dynamic content</h2>
+  <h2>Currently Configured Tests:</h2>
+
+    <ul>
+      {% for test in all_tests %}
+      <li><b>{{ test.test_name }}</b>
+        <ul>
+          <li>Source: {{ test.source_host }}</li>
+          <li>Destination: {{ test.dest_host }}</li>
+          <li>Test Type: {{ test }}</li>
+          <li>Duration: {{ test.duration }}s</li>
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
   <p>PerfDash has the following record counts:</p>
   <ul>
     <li><strong>Hosts:</strong> {{ num_hosts }}</li>

@@ -83,6 +83,8 @@ class Test(models.Model):
         help_text='Test Type',
     )
 
+    
+
     duration = models.IntegerField()
 
     source_host = models.ForeignKey('Host', related_name="source_host", on_delete=models.RESTRICT, null=True)
@@ -90,7 +92,7 @@ class Test(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return self.test_name
+        return self.get_type_display()
 
     def get_absolute_url(self):
         """Returns the url to access a particular host instance."""
