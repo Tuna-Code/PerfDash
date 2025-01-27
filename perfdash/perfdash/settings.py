@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      # Add our new application
     'tests.apps.TestsConfig', # This object was created for us in /tests/apps.py
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
